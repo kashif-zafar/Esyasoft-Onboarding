@@ -89,7 +89,12 @@ The app runs at http://localhost:5173 and the API at http://localhost:3001. On W
 
 Never commit `.env`. It is git-ignored.
 
+## Deploy on Vercel
 
+1. Push the repo to GitHub and import it in Vercel (Vite is detected automatically).
+2. Add the environment variables above, except `PORT` and `APP_ORIGIN`, and deploy.
+3. Add your Vercel domain in the Clerk dashboard.
+4. Open `/api/health` on your site. It should return `{"ok":true,...}`.
 
 `VITE_*` variables are read at build time, so redeploy after changing them. For a public launch, use Clerk production keys, and verify a domain in Resend so feedback emails can reach any address.
 
@@ -103,4 +108,8 @@ Never commit `.env`. It is git-ignored.
 
 This is an independent project. Company names and onboarding content are used for demonstration, and the company overview text comes from public sources.
 
+## Author
 
+**Kashif**: B.Tech Computer Engineering, Jamia Millia Islamia
+
+[GitHub](https://github.com/kashif-zafar) · [LinkedIn](https://linkedin.com/in/zafarkashif)

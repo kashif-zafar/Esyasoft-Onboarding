@@ -1,4 +1,5 @@
-import { businessHeads, coreValues, globalPresence } from '../content';
+import { businessHeads, coreValues } from '../content';
+import GlobalPresence from './GlobalPresence';
 
 function Anim({ k }: { k: string }) {
   if (k === 'metering') {
@@ -103,10 +104,7 @@ export default function WhatWeDo() {
         </p>
       </div>
 
-      <div className="presenceBox panel pad">
-        <h3>{globalPresence.title}</h3>
-        <p>{globalPresence.text}</p>
-      </div>
+      <GlobalPresence />
 
       <div className="headGrid">
         {businessHeads.map((h, i) => (

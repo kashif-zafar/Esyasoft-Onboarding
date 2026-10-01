@@ -374,6 +374,17 @@ export const lateralTraining = {
 export const globalPresence = {
   title: 'Esyasoft across the globe',
   text: 'Esyasoft is headquartered in the UAE and works with power, gas and water utilities worldwide. It has offices in more than 10 countries, including the UAE, India, the UK, the Netherlands, Romania, Azerbaijan, Indonesia and the USA.',
+  /* Country-level map pins (approximate positions). The map shows a selection, not every office. */
+  offices: [
+    { name: 'UAE', lon: 55.3, lat: 25.2, hq: true },
+    { name: 'India', lon: 78.5, lat: 22.0 },
+    { name: 'United Kingdom', lon: -1.5, lat: 52.5 },
+    { name: 'Netherlands', lon: 5.3, lat: 52.1 },
+    { name: 'Romania', lon: 25.0, lat: 45.9 },
+    { name: 'Azerbaijan', lon: 47.6, lat: 40.4 },
+    { name: 'Indonesia', lon: 113.0, lat: -2.0 },
+    { name: 'USA', lon: -98.0, lat: 39.0 },
+  ] as { name: string; lon: number; lat: number; hq?: boolean }[],
 };
 
 /* Core values (shown below the four business heads) */

@@ -442,3 +442,39 @@ footer span{font-family:var(--display);font-size:22px;letter-spacing:2px;color:v
 .valuesList li{padding:18px 20px;font-family:var(--display);font-size:26px;letter-spacing:1px;display:flex;align-items:center;gap:12px}
 .valuesList li b{font-weight:400;background:var(--sun);border:3px solid var(--line);border-radius:10px;padding:0 10px;font-size:20px}
 @media(max-width:1000px){.valuesList{grid-template-columns:1fr}}
+
+/* ===== Global presence map ===== */
+.presenceStats{list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:16px 0 18px}
+.presenceStats li{background:#fff;border:3px solid var(--line);border-radius:999px;padding:6px 14px;font-weight:800;font-size:14px;color:var(--muted)}
+.presenceStats b{font-family:var(--display);font-weight:400;letter-spacing:1px;font-size:18px;color:var(--ink);margin-right:4px}
+.presenceGrid{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:20px;align-items:stretch}
+.mapWrap{background:var(--deep);border:4px solid var(--line);border-radius:18px;padding:12px;box-shadow:4px 4px 0 var(--line);overflow:hidden}
+.mapWrap svg{display:block;width:100%;height:auto}
+.mapLand{fill:none;stroke:var(--lime);stroke-width:5;stroke-linecap:round;opacity:.45}
+.mapArc{fill:none;stroke:var(--sky);stroke-width:2;stroke-dasharray:6 7;opacity:.55;animation:arcFlow 1.6s linear infinite}
+.mapArc.on{opacity:1;stroke:var(--sun);stroke-width:3}
+.mapPin{cursor:pointer}
+.mapPin .dot{fill:var(--lime);stroke:var(--line);stroke-width:3;transition:r .15s}
+.mapPin.hq .dot{fill:var(--sun)}
+.mapPin.on .dot{fill:var(--coral);r:15px}
+.mapPin text{font-family:var(--display);font-size:14px;fill:var(--ink);pointer-events:none}
+.mapPin .pulse{fill:var(--sun);opacity:.6;transform-box:fill-box;transform-origin:center;animation:pinPulse 1.8s ease-out infinite}
+.presenceList{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;justify-content:center}
+.presenceList li{display:flex;align-items:center;gap:10px;background:#fff;border:3px solid var(--line);border-radius:12px;padding:7px 10px;font-weight:800;color:var(--ink);cursor:default;transition:transform .15s,background .15s}
+.presenceList li.on,.presenceList li:focus-visible{background:var(--sun);transform:translateX(4px);outline:none}
+.presenceList b{font-family:var(--display);font-weight:400;background:var(--lime);border:2px solid var(--line);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:15px;flex:none}
+.presenceList span{flex:1}
+.presenceList em{font-style:normal;font-family:var(--display);letter-spacing:1px;background:var(--ink);color:var(--sun);border-radius:6px;padding:0 7px;font-size:14px}
+.presenceNote{margin-top:12px!important;font-size:13px;opacity:.8}
+@keyframes arcFlow{to{stroke-dashoffset:-26}}
+@keyframes pinPulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.4);opacity:0}}
+@media(max-width:860px){
+  .presenceGrid{grid-template-columns:minmax(0,1fr)}
+  .presenceList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .presenceBox.pad{padding:20px}
+  .mapWrap{padding:6px}
+  .mapPin .dot{r:12px}
+  .mapPin.hq .dot{r:16px}
+  .mapPin.on .dot{r:16px}
+  .mapPin text{display:none}
+}
